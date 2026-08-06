@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Form Coach
+
+go through the architecture of the project in detail and build a full stack app . use mysql if required for data base integration. use userid is root and password is Shreyas@295 for MySql. For now build it only for long distance running form correction. I should be able to add other activities like sprint,shot put, discus throw,etc later. There should be no errors. Strictly follow the architecture given in the ppt
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/77502ccd-225a-4c52-961a-135ae1aa69f5).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
