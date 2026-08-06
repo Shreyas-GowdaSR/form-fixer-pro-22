@@ -22,6 +22,7 @@ import { runPipeline, type PipelineProgress } from "@/lib/sportai/pipeline";
 import type { AnalysisResult } from "@/lib/sportai/contracts";
 import { AnalysisReport } from "@/components/sportai/analysis-report";
 import { CoachingVideo } from "@/components/sportai/coaching-video";
+import { VoiceCoach } from "@/components/sportai/voice-coach";
 import { useAuth } from "@/hooks/useAuth";
 
 const searchSchema = z.object({
@@ -236,6 +237,7 @@ function AnalyzePage() {
           <div className="space-y-3">
             <h2 className="font-display text-2xl font-bold">Coaching video</h2>
             <CoachingVideo videoUrl={videoUrl} result={result} activityName={activityName} />
+            <VoiceCoach result={result} activityName={activityName} autoPlay />
           </div>
           <div>
             <h2 className="mb-3 font-display text-2xl font-bold">Performance report</h2>
