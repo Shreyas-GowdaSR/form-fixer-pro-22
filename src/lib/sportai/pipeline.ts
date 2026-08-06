@@ -5,7 +5,7 @@ import type {
   Joint,
   Phase1Output,
 } from "./contracts";
-import { CRITICAL_JOINTS, mean, round } from "./geometry";
+import { CRITICAL_JOINTS, LM, angleAt, angleFromVertical, mean, round } from "./geometry";
 import { getPoseLandmarker } from "./pose-detector";
 import { getActivity } from "./registry";
 import "./activities";
@@ -120,7 +120,17 @@ export async function runPipeline(options: RunPipelineOptions): Promise<Analysis
         joints,
         occlusionFlags,
         avgConfidence: round(mean(joints.map((j) => j.conf)), 3),
-        angles: {},
+        angles: {
+          trunk_lean: round(
+            angleFromVertical(joints[LM.rightHip]!, joints[LM.rightShoulder]!),
+          ),
+          knee_flex: round(
+            angleAt(joints[LM.rightHip]!, joints[LM.rightKnee]!, joints[LM.rightAnkle]!),
+          ),
+          elbow: round(
+            angleAt(joints[LM.rightShoulder]!, joints[LM.rightElbow]!, joints[LM.rightWrist]!),
+          ),
+        },
       });
 
       onProgress?.({
