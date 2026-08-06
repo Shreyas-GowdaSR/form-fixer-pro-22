@@ -5,7 +5,7 @@ import type {
   Joint,
   Phase1Output,
 } from "./contracts";
-import { CRITICAL_JOINTS, LANDMARK_FALLBACK, mean, round } from "./pipeline-utils";
+import { CRITICAL_JOINTS, mean, round } from "./geometry";
 import { getPoseLandmarker } from "./pose-detector";
 import { getActivity } from "./registry";
 import "./activities";
@@ -158,6 +158,5 @@ export async function runPipeline(options: RunPipelineOptions): Promise<Analysis
   } finally {
     URL.revokeObjectURL(url);
     video.removeAttribute("src");
-    void LANDMARK_FALLBACK;
   }
 }
